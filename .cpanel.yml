@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    # Set the deployment path to public_html (adjust the username as needed)
+    - export DEPLOYPATH=/home/$USER/public_html/
+    # Copy the main HTML file
+    - /bin/cp dist/index.html $DEPLOYPATH
+    # Copy the assets directory and all its contents
+    - /bin/cp -R dist/assets $DEPLOYPATH
