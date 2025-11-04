@@ -38,7 +38,7 @@ const Header: React.FC = () => {
               <li><Link to="/about">About us</Link></li>
               <li><Link to="/invest">Invest with us</Link></li>
               <li><button onClick={handleContactClick} style={{background: 'none', border: 'none', color: '#333', fontWeight: 500, cursor: 'pointer', fontSize: '12px'}}>Contact us</button></li>
-              <li><button onClick={handleBookNowClick} className="btn-primary">Book now</button></li>
+              <li><button onClick={handleBookNowClick} className="btn-primary">RESERVE ME</button></li>
             </ul>
           </nav>
 

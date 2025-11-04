@@ -108,7 +108,7 @@ const BookingForm: React.FC = () => {
             onClick={handleBookNow}
             style={{ marginTop: '25px' }}
           >
-            Book Now
+            RESERVE ME
           </button>
         </div>
       </div>

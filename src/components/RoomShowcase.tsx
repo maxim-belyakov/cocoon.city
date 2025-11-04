@@ -17,31 +17,7 @@ const RoomShowcase: React.FC = () => {
   return (
     <section className="room-showcase">
       <div className="container">
-        <div style={{ 
-          display: 'flex', 
-          gap: '40px', 
-          marginBottom: '60px',
-          alignItems: 'center'
-        }}>
-          {/* Property Image Placeholder */}
-          <div style={{
-            flex: 1,
-            height: '400px',
-            background: 'linear-gradient(135deg, var(--flamingo-pink) 0%, var(--soft-coral) 100%)',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontSize: '18px',
-            fontWeight: 'bold'
-          }}>
-            Property Images
-          </div>
-          
-          {/* Map */}
-          <PropertyMap property={selectedProperty} />
-        </div>
+        
 
         <h2 style={{
           textAlign: 'center',
@@ -112,7 +88,7 @@ const RoomShowcase: React.FC = () => {
                   onClick={handleBookNow}
                   style={{ width: '100%' }}
                 >
-                  BOOK NOW
+                  RESERVE ME
                 </button>
               </div>
             </div>

@@ -27,7 +27,11 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <h1>Cocoon – Your Everyday Escape</h1>
+          <h1 style={{ fontSize: '42px', marginBottom: '10px' }}>COCOON: COLIVING HOMES<br />IN WARSAW</h1>
+          <h2 style={{ fontSize: '24px', fontWeight: '400', marginBottom: '30px' }}>
+            DISCOVER YOUR COLIVING PLACE<br />
+            WHERE CONNECTION, AND WORK-LIFE BALANCE COME NATURALLY
+          </h2>
           <BookingForm />
         </div>
       </section>
@@ -61,10 +65,10 @@ const Home: React.FC = () => {
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
               gap: '40px',
               marginTop: '60px',
-              textAlign: 'left'
+              textAlign: 'center',
             }}>
               <div>
                 <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>ESSENTIALS</h3>
