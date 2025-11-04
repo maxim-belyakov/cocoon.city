@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BookingForm from '../components/BookingForm';
 import RoomShowcase from '../components/RoomShowcase';
+import ApplicationForm from '../components/ApplicationForm';
+import { useAppSelector } from '../utils/hooks';
 
 const Home: React.FC = () => {
+  const { selectedRoom, startDate } = useAppSelector(state => state.booking);
+  const [showApplicationForm, setShowApplicationForm] = useState(false);
+
+  // Show application form if all booking selections are made
+  React.useEffect(() => {
+    if (selectedRoom && startDate) {
+      setShowApplicationForm(true);
+      // Scroll to application form
+      setTimeout(() => {
+        const formElement = document.getElementById('application-form');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, [selectedRoom, startDate]);
+
   return (
     <div>
       {/* Hero Section */}
@@ -15,6 +34,15 @@ const Home: React.FC = () => {
 
       {/* Room Showcase Section */}
       <RoomShowcase />
+
+      {/* Application Form Section */}
+      {showApplicationForm && (
+        <section id="application-form" style={{ padding: '40px 0', background: 'var(--linen)' }}>
+          <div className="container">
+            <ApplicationForm onClose={() => setShowApplicationForm(false)} />
+          </div>
+        </section>
+      )}
 
       {/* What's In Section */}
       <section className="about-section">
@@ -31,15 +59,15 @@ const Home: React.FC = () => {
               Cocoon is your base, your vibe, your community.
             </p>
 
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-              gap: '40px', 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '40px',
               marginTop: '60px',
               textAlign: 'left'
             }}>
               <div>
-                <h3 style={{ color: '#FF6B47', marginBottom: '20px' }}>ESSENTIALS</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>ESSENTIALS</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Fully furnished houses</li>
                   <li>High-speed Wi-Fi</li>
@@ -49,7 +77,7 @@ const Home: React.FC = () => {
               </div>
               
               <div>
-                <h3 style={{ color: '#FF6B47', marginBottom: '20px' }}>COMFORT</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>COMFORT</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Fully equipped kitchen</li>
                   <li>Web booking</li>
@@ -59,7 +87,7 @@ const Home: React.FC = () => {
               </div>
               
               <div>
-                <h3 style={{ color: '#FF6B47', marginBottom: '20px' }}>PAMPER ME</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>PAMPER ME</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Airport transportation</li>
                   <li>Chauffeur</li>

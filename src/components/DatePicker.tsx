@@ -90,16 +90,16 @@ const DatePicker: React.FC = () => {
         style.color = '#ccc';
       } else if (isBooked) {
         className += ' booked';
-        style.backgroundColor = '#FF6B47';
+        style.backgroundColor = '#FF8A47';
         style.color = 'white';
       } else if (isSelected) {
         className += ' selected';
-        style.backgroundColor = '#4CAF50';
+        style.backgroundColor = 'var(--sage-green)';
         style.color = 'white';
       } else if (isInRange) {
         className += ' in-range';
-        style.backgroundColor = '#C8E6C9';
-        style.color = '#2E7D32';
+        style.backgroundColor = '#d4e0c9';
+        style.color = 'var(--deep-taupe)';
       } else if (isAvailable) {
         className += ' available';
         style.backgroundColor = 'white';
@@ -264,14 +264,14 @@ const DatePicker: React.FC = () => {
                     style.backgroundColor = '#f5f5f5';
                     style.color = '#ccc';
                   } else if (isBooked) {
-                    style.backgroundColor = '#FF6B47';
+                    style.backgroundColor = '#FF8A47';
                     style.color = 'white';
                   } else if (isSelected) {
-                    style.backgroundColor = '#4CAF50';
+                    style.backgroundColor = 'var(--sage-green)';
                     style.color = 'white';
                   } else if (isInRange) {
-                    style.backgroundColor = '#C8E6C9';
-                    style.color = '#2E7D32';
+                    style.backgroundColor = '#d4e0c9';
+                    style.color = 'var(--deep-taupe)';
                   } else if (isAvailable) {
                     style.backgroundColor = 'white';
                     style.color = '#333';
@@ -317,15 +317,15 @@ const DatePicker: React.FC = () => {
             Past dates
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <div style={{ width: '12px', height: '12px', backgroundColor: '#FF6B47' }}></div>
+            <div style={{ width: '12px', height: '12px', backgroundColor: '#FF8A47' }}></div>
             Booked
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <div style={{ width: '12px', height: '12px', backgroundColor: '#4CAF50' }}></div>
+            <div style={{ width: '12px', height: '12px', backgroundColor: 'var(--sage-green)' }}></div>
             Selected
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <div style={{ width: '12px', height: '12px', backgroundColor: '#C8E6C9' }}></div>
+            <div style={{ width: '12px', height: '12px', backgroundColor: '#d4e0c9' }}></div>
             Available period
           </div>
         </div>

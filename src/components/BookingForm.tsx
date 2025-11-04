@@ -20,13 +20,6 @@ const BookingForm: React.FC = () => {
     startDate 
   } = useAppSelector(state => state.booking);
 
-  const handlePropertyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const property = properties.find(p => p.id === e.target.value);
-    if (property) {
-      dispatch(setSelectedProperty(property));
-    }
-  };
-
   const handleRoomChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const room = rooms.find(r => r.id === e.target.value);
     if (room) {
@@ -54,21 +47,6 @@ const BookingForm: React.FC = () => {
   return (
     <div className="booking-form">
       <div className="form-row">
-        <div className="form-group">
-          <label>Cocoon</label>
-          <select 
-            value={selectedProperty?.id || ''} 
-            onChange={handlePropertyChange}
-          >
-            <option value="">Select a Cocoon</option>
-            {properties.map(property => (
-              <option key={property.id} value={property.id}>
-                {property.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="form-group">
           <label>Room</label>
           <select 

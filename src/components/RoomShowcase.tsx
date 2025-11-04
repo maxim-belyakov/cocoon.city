@@ -2,6 +2,7 @@ import React from 'react';
 import { useAppSelector, useAppDispatch } from '../utils/hooks';
 import { setDatePickerOpen } from '../store/bookingSlice';
 import { rooms } from '../store/bookingSlice';
+import PropertyMap from './PropertyMap';
 
 const RoomShowcase: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -11,9 +12,7 @@ const RoomShowcase: React.FC = () => {
     dispatch(setDatePickerOpen(true));
   };
 
-  const propertyTitle = selectedProperty 
-    ? `OUR ROOMS AT ${selectedProperty.name.toUpperCase()}`
-    : 'OUR ROOMS AT COCOON PLACE COLIVING WARSAW – POLAND';
+  const propertyTitle = 'COCOONS AT COCOON PLACE COLIVING WARSAW – POLAND';
 
   return (
     <section className="room-showcase">
@@ -25,10 +24,10 @@ const RoomShowcase: React.FC = () => {
           alignItems: 'center'
         }}>
           {/* Property Image Placeholder */}
-          <div style={{ 
+          <div style={{
             flex: 1,
             height: '400px',
-            background: 'linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%)',
+            background: 'linear-gradient(135deg, var(--flamingo-pink) 0%, var(--soft-coral) 100%)',
             borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
@@ -40,28 +39,15 @@ const RoomShowcase: React.FC = () => {
             Property Images
           </div>
           
-          {/* Map Placeholder */}
-          <div style={{ 
-            flex: 1,
-            height: '400px',
-            background: '#f0f0f0',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#666',
-            fontSize: '18px',
-            border: '2px solid #ddd'
-          }}>
-            📍 Map Location
-          </div>
+          {/* Map */}
+          <PropertyMap property={selectedProperty} />
         </div>
 
-        <h2 style={{ 
-          textAlign: 'center', 
-          fontSize: '32px', 
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: '32px',
           marginBottom: '40px',
-          color: '#FF6B47' 
+          color: 'var(--flamingo-pink)'
         }}>
           {propertyTitle}
         </h2>
@@ -71,19 +57,24 @@ const RoomShowcase: React.FC = () => {
             <div key={room.id} className="room-card">
               <div className="room-card-header">
                 <h3>{room.name}</h3>
-                <div style={{ 
-                  height: '200px', 
-                  background: 'rgba(255,255,255,0.2)',
-                  borderRadius: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '15px 0',
-                  fontSize: '14px'
-                }}>
-                  HERE IS WHERE WE WILL INSERT<br />
-                  PICTURES: 2-3 OF EACH ROOM
-                </div>
+                {room.image && (
+                  <div style={{
+                    height: '200px',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    margin: '15px 0',
+                  }}>
+                    <img
+                      src={room.image}
+                      alt={room.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
+                )}
               </div>
               
               <div className="room-card-content">

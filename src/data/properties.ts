@@ -1,0 +1,133 @@
+import { Property, Room } from '../types';
+
+// Single property - Cocoon Place Coliving Warsaw
+export const properties: Property[] = [
+  {
+    id: 'cocoon-place-warsaw',
+    name: 'Cocoon Place Coliving Warsaw',
+    city: 'Warsaw',
+    country: 'Poland',
+    type: 'Place',
+  },
+];
+
+export const propertyLocations: Record<string, string> = {
+  'cocoon-place-warsaw': 'https://maps.app.goo.gl/LxkcUmA5CAoznVEP8?g_st=aw',
+};
+
+export const rooms: Room[] = [
+  {
+    id: 'deluxe-singles-hideout',
+    name: 'Deluxe singles hideout',
+    type: 'Deluxe singles hideout',
+    maxOccupancy: 1,
+    price: 1800,
+    currency: 'PLN',
+    size: '9sqm',
+    image: '/src/assets/room1.jpg',
+    features: [
+      'Fully furnished',
+      'Sofa bed',
+      'Desk and chair',
+      'Wardrobe with mirror',
+      'Shared bathroom',
+      'Laundry room',
+      'Flexible annual lease',
+      'Penalty-free 30 day notice',
+      'Fixed monthly online payments',
+      'All utilities included',
+      'No broker fees',
+      'No bills hassle',
+    ],
+    description: 'COCOON PLACE COLIVING | WARSAW, POLAND',
+  },
+  {
+    id: 'premier-solo-escape',
+    name: 'Premier Solo Escape',
+    type: 'Premier Solo Escape',
+    maxOccupancy: 1,
+    price: 1900,
+    currency: 'PLN',
+    size: '10-11sqm',
+    image: '/src/assets/room2.jpg',
+    features: [
+      'Fully furnished',
+      'Lux Sofa bed',
+      'Desk and chair',
+      'Wardrobe with mirror',
+      'Shared bathroom',
+      'Laundry room',
+      'Flexible annual lease',
+      'Penalty-free 30 day notice',
+      'Fixed monthly online payments',
+      'All utilities included',
+      'No broker fees',
+      'No bills hassle',
+    ],
+    description: 'COCOON PLACE COLIVING | WARSAW, POLAND',
+  },
+  {
+    id: 'junior-duo-den',
+    name: 'Junior Duo Den',
+    type: 'Junior Duo Den',
+    maxOccupancy: 2,
+    price: 2100,
+    currency: 'PLN',
+    size: '12sqm',
+    image: '/src/assets/room3.jpg',
+    features: [
+      'Fully furnished',
+      'Luxurious Double Bed',
+      'Desk and chair',
+      'Wardrobe with mirror',
+      'Chest of drawers',
+      'Nightstand with lamp',
+      'Shared bathroom',
+      'Laundry room',
+      'Flexible annual lease',
+      'Penalty-free 30 day notice',
+      'Fixed monthly online payments',
+      'All utilities included',
+      'No broker fees',
+      'No bills hassle',
+    ],
+    description: 'COCOON PLACE COLIVING | WARSAW, POLAND',
+  },
+  {
+    id: 'executive-duo-retreat',
+    name: 'Executive Duo Retreat',
+    type: 'Executive Duo Retreat',
+    maxOccupancy: 2,
+    price: 2250,
+    currency: 'PLN',
+    size: '15sqm',
+    image: '/src/assets/room4.jpg',
+    features: [
+      'Fully furnished',
+      'Private balcony',
+      'Luxurious Double Bed',
+      'Chest of drawers',
+      'Armchair',
+      '2 x nightstands with lamp',
+      'Wardrobe with mirror',
+      'Laundry Room',
+      'Shared bathroom',
+      'Flexible annual lease',
+      'Penalty-free 30 day notice',
+      'Fixed monthly online payments',
+      'All utilities included',
+      'No broker fees',
+      'No bills hassle',
+    ],
+    description: 'COCOON PLACE COLIVING | WARSAW, POLAND',
+  },
+];
+
+export const roomTypes = [
+  'Deluxe singles hideout',
+  'Premier Solo Escape',
+  'Junior Duo Den',
+  'Executive Duo Retreat',
+] as const;
+
+export const bookingPeriods = [1, 6, 12] as const;

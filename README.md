@@ -41,14 +41,16 @@ A modern React/TypeScript/Redux website for Cocoon Coliving - "Where Remote Prof
 - Contact integration
 
 ### Smart Booking System
-- **Property Selection**: 5 locations across Europe and UAE
-- **Room Types**: 
-  - Deluxe singles hideout (1,800 PLN/month)
-  - Premier Solo Escape (1,900 PLN/month) 
-  - Junior Duo Den (2,100 PLN/month)
-  - Executive Duo Retreat (2,250 PLN/month)
-- **Date Picker**: Custom calendar with availability checking
+- **Single Property**: Cocoon Place Coliving Warsaw, Poland
+- **Room Types** (with real images):
+  - Deluxe singles hideout (1,800 PLN/month, 9sqm, max 1 adult)
+  - Premier Solo Escape (1,900 PLN/month, 10-11sqm, max 1 adult)
+  - Junior Duo Den (2,100 PLN/month, 12sqm, max 2 adults)
+  - Executive Duo Retreat (2,250 PLN/month, 15sqm, max 2 adults)
+- **Date Picker**: Custom calendar with 30-day minimum booking
 - **Booking Periods**: 1, 6, or 12 months
+- **Application Form**: Comprehensive form with conditional fields
+- **Google Maps**: Integrated property location
 
 ## 🛠️ Getting Started
 
@@ -69,7 +71,21 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000` (or next available port)
+The application will be available at `http://localhost:5173` (or next available port)
+
+### ⚠️ Permission Issues Fix
+
+If you encounter "EACCES: permission denied" errors:
+
+```bash
+# Option 1: Fix permissions
+chmod -R 755 node_modules/.vite dist
+
+# Option 2: Clean and reinstall (recommended)
+rm -rf node_modules/.vite dist
+npm install
+npm run dev
+```
 
 ### Available Scripts
 ```bash
@@ -101,9 +117,17 @@ All tests are passing with 27 test cases covering:
 ## 🎨 Design Features
 
 ### Brand Identity
-- **Color Scheme**: Cocoon orange (#FF6B47) with clean whites and grays
-- **Typography**: Avenir font family for modern, readable text
-- **Logo**: Custom Cocoon branding with house icon
+- **Color Scheme**:
+  - Flamingo Pink (#FC8EAC) - Primary buttons, icons, highlights
+  - Sage Green (#A3B18A) - Secondary elements, form focus states
+  - Linen (#F4F1EE) - Backgrounds
+  - Deep Taupe (#5E5343) - Text, borders, footer
+  - Soft Coral (#F7B7A3) - Accent details
+- **Typography**:
+  - Headings: Poppins font family
+  - Body: Inter font family
+- **Logo**: Custom COCOON logo from assets
+- **Favicon**: cocoon.ico
 
 ### Responsive Design
 - Mobile-first approach
@@ -140,17 +164,18 @@ pages/
 └── Invest.tsx        # Investment opportunities
 ```
 
-## 🌍 Properties & Locations
+## 🌍 Property & Location
 
-### Cocoon Place (Coliving)
-- **Location**: Pruszkow, Poland
-- **Focus**: Harmony-driven community living
-
-### Cocoon City (Urban Living)
-- **Warsaw, Poland**: Heart of Eastern Europe
-- **Porto, Portugal**: Vibrant coastal city
-- **Edinburgh, Scotland**: Historic and modern
-- **Dubai, UAE**: International business hub
+### Cocoon Place Coliving
+- **Location**: Warsaw, Poland
+- **Google Maps**: [View Location](https://maps.app.goo.gl/LxkcUmA5CAoznVEP8?g_st=aw)
+- **Focus**: Harmony-driven community living for remote professionals
+- **Features**:
+  - Fully furnished rooms
+  - High-speed Wi-Fi
+  - Shared spaces
+  - Flexible lease terms
+  - All utilities included
 
 ## 📱 Contact Information
 - **Email**: @cocoon.city

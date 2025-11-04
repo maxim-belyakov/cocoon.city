@@ -21,33 +21,14 @@ const Header: React.FC = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo-section">
-            <div 
-              className="logo"
-              style={{
-                background: 'linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%)',
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '8px',
-                fontWeight: 'bold',
-                fontSize: '18px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px'
-              }}
-            >
-              <div style={{
-                width: '30px',
-                height: '30px',
-                border: '2px solid white',
-                borderRadius: '4px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                🏠
-              </div>
-              COCOON
-            </div>
+            <Link to="/">
+              <img
+                src="/src/assets/COCOON Logo.png"
+                alt="COCOON Coliving"
+                className="logo"
+                style={{ height: '60px', width: 'auto' }}
+              />
+            </Link>
           </div>
 
           <nav>
@@ -63,15 +44,21 @@ const Header: React.FC = () => {
 
           <div className="nav-icons">
             <div className="social-icons">
-              <Mail size={20} style={{cursor: 'pointer'}} onClick={handleContactClick} />
+              <Mail size={20} style={{cursor: 'pointer', color: 'var(--deep-taupe)'}} onClick={handleContactClick} />
               <div className="language-switcher">
-                <span>PL</span>
+                <span style={{cursor: 'pointer'}}>PL</span>
                 <span>|</span>
-                <span className="active">EN</span>
+                <span className="active" style={{cursor: 'pointer'}}>EN</span>
               </div>
-              <Facebook size={20} style={{cursor: 'pointer'}} />
-              <Instagram size={20} style={{cursor: 'pointer'}} />
-              <Linkedin size={20} style={{cursor: 'pointer'}} />
+              <a href="https://www.facebook.com/cocooncoliving" target="_blank" rel="noopener noreferrer">
+                <Facebook size={20} style={{cursor: 'pointer'}} />
+              </a>
+              <a href="https://www.instagram.com/cocooncoliving" target="_blank" rel="noopener noreferrer">
+                <Instagram size={20} style={{cursor: 'pointer'}} />
+              </a>
+              <a href="https://www.linkedin.com/in/paulina-shaw" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={20} style={{cursor: 'pointer'}} />
+              </a>
             </div>
           </div>
         </div>

@@ -1,3 +1,12 @@
+:root {
+  /* Brand Colors */
+  --flamingo-pink: #FC8EAC;
+  --sage-green: #A3B18A;
+  --linen: #F4F1EE;
+  --deep-taupe: #5E5343;
+  --soft-coral: #F7B7A3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,14 +14,19 @@
 }
 
 body {
-  font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: var(--deep-taupe);
   line-height: 1.6;
+  background-color: var(--linen);
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -56,7 +70,7 @@ body {
 }
 
 .nav a:hover {
-  color: #FF6B47;
+  color: var(--flamingo-pink);
 }
 
 .nav-icons {
@@ -68,6 +82,26 @@ body {
 .social-icons {
   display: flex;
   gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  color: var(--deep-taupe);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--flamingo-pink);
+}
+
+.social-icons svg {
+  color: var(--deep-taupe);
+  transition: color 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: var(--flamingo-pink);
 }
 
 .language-switcher {
@@ -82,12 +116,12 @@ body {
 }
 
 .language-switcher .active {
-  color: #FF6B47;
+  color: var(--flamingo-pink);
   font-weight: bold;
 }
 
 .btn-primary {
-  background: #FF6B47;
+  background: var(--flamingo-pink);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -100,13 +134,13 @@ body {
 }
 
 .btn-primary:hover {
-  background: #E5553F;
+  background: #e97694;
 }
 
 .btn-secondary {
   background: transparent;
-  color: #333;
-  border: 2px solid #333;
+  color: var(--deep-taupe);
+  border: 2px solid var(--sage-green);
   padding: 10px 22px;
   border-radius: 4px;
   font-weight: 600;
@@ -117,12 +151,12 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #333;
+  background: var(--sage-green);
   color: white;
 }
 
 .hero {
-  background: linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%);
+  background: linear-gradient(135deg, var(--flamingo-pink) 0%, var(--soft-coral) 100%);
   color: white;
   text-align: center;
   padding: 100px 0;
@@ -174,7 +208,7 @@ body {
 .form-group select:focus,
 .form-group input:focus {
   outline: none;
-  border-color: #FF6B47;
+  border-color: var(--sage-green);
 }
 
 .room-showcase {
@@ -201,7 +235,7 @@ body {
 }
 
 .room-card-header {
-  background: #FF6B47;
+  background: var(--flamingo-pink);
   color: white;
   padding: 20px;
   text-align: center;
@@ -228,7 +262,7 @@ body {
 .price {
   font-size: 18px;
   font-weight: bold;
-  color: #FF6B47;
+  color: var(--flamingo-pink);
   margin: 15px 0;
 }
 
@@ -316,7 +350,7 @@ body {
 .founder-info h3 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #FF6B47;
+  color: var(--flamingo-pink);
 }
 
 .founder-info h4 {
@@ -339,7 +373,7 @@ body {
 
 .three-is-item h3 {
   font-size: 24px;
-  color: #FF6B47;
+  color: var(--flamingo-pink);
   margin-bottom: 15px;
 }
 
@@ -363,13 +397,13 @@ body {
 }
 
 .invest-point h3 {
-  color: #FF6B47;
+  color: var(--flamingo-pink);
   margin-bottom: 15px;
   font-size: 18px;
 }
 
 .footer {
-  background: #333;
+  background: var(--deep-taupe);
   color: white;
   padding: 40px 0;
   text-align: center;
