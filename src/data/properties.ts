@@ -24,7 +24,7 @@ export const rooms: Room[] = [
     price: 1800,
     currency: 'PLN',
     size: '9sqm',
-    image: '/src/assets/room1.jpg',
+    image: '/assets/room1.jpg',
     features: [
       'Fully furnished',
       'Sofa bed',
@@ -49,7 +49,7 @@ export const rooms: Room[] = [
     price: 1900,
     currency: 'PLN',
     size: '10-11sqm',
-    image: '/src/assets/room2.jpg',
+    image: '/assets/room2.jpg',
     features: [
       'Fully furnished',
       'Lux Sofa bed',
@@ -74,7 +74,7 @@ export const rooms: Room[] = [
     price: 2100,
     currency: 'PLN',
     size: '12sqm',
-    image: '/src/assets/room3.jpg',
+    image: '/assets/room3.jpg',
     features: [
       'Fully furnished',
       'Luxurious Double Bed',
@@ -101,7 +101,7 @@ export const rooms: Room[] = [
     price: 2250,
     currency: 'PLN',
     size: '15sqm',
-    image: '/src/assets/room4.jpg',
+    image: '/assets/room4.jpg',
     features: [
       'Fully furnished',
       'Private balcony',

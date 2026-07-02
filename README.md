@@ -14,6 +14,8 @@ A modern React/TypeScript/Redux website for Cocoon Coliving - "Where Remote Prof
 - **React 18** with TypeScript for type safety
 - **Redux Toolkit** for state management
 - **React Router** for client-side routing
+- **react-i18next** for full EN / PL localization (language choice persisted in `localStorage`)
+- **Framer Motion** for hero and room-card entrance animations
 - **Vite** for fast development and building
 - **Jest & React Testing Library** for comprehensive testing
 

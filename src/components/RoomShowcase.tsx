@@ -1,12 +1,13 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../utils/hooks';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from '../utils/hooks';
 import { setDatePickerOpen } from '../store/bookingSlice';
 import { rooms } from '../store/bookingSlice';
-import PropertyMap from './PropertyMap';
 
 const RoomShowcase: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedProperty } = useAppSelector(state => state.booking);
+  const { t } = useTranslation();
 
   const handleBookNow = () => {
     dispatch(setDatePickerOpen(true));
@@ -29,8 +30,16 @@ const RoomShowcase: React.FC = () => {
         </h2>
 
         <div className="room-cards">
-          {rooms.map((room) => (
-            <div key={room.id} className="room-card">
+          {rooms.map((room, idx) => (
+            <motion.div
+              key={room.id}
+              className="room-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.08 }}
+              whileHover={{ y: -6 }}
+            >
               <div className="room-card-header">
                 <h3>{room.name}</h3>
                 {room.image && (
@@ -72,7 +81,7 @@ const RoomShowcase: React.FC = () => {
                 </div>
                 
                 <div className="price">
-                  Starting from {room.price.toLocaleString()} {room.currency} per month
+                  {t('perMonth', { price: room.price.toLocaleString(), currency: room.currency })}
                 </div>
                 
                 <div style={{ 
@@ -83,15 +92,15 @@ const RoomShowcase: React.FC = () => {
                   Size {room.size}
                 </div>
                 
-                <button 
-                  className="btn-primary" 
+                <button
+                  className="btn-primary"
                   onClick={handleBookNow}
                   style={{ width: '100%' }}
                 >
-                  RESERVE ME
+                  {t('nav.reserve')}
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

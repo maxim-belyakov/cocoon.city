@@ -62,7 +62,7 @@ const Invest: React.FC = () => {
             <p style={{ 
               fontSize: '24px', 
               fontWeight: 'bold', 
-              color: '#FF6B47',
+              color: '#FC8EAC',
               marginBottom: '30px'
             }}>
               Just connect.
@@ -102,7 +102,7 @@ const Invest: React.FC = () => {
             <div 
               className="footer-logo"
               style={{
-                background: 'linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%)',
+                background: 'linear-gradient(135deg, #FC8EAC 0%, #F7B7A3 100%)',
                 color: 'white',
                 padding: '20px 40px',
                 borderRadius: '12px',

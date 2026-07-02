@@ -37,48 +37,33 @@ const renderWithProvider = (component: React.ReactElement) => {
 describe('BookingForm', () => {
   test('renders booking form with all fields', () => {
     renderWithProvider(<BookingForm />);
-    
-    expect(screen.getByText('Cocoon')).toBeInTheDocument();
+
     expect(screen.getByText('Room')).toBeInTheDocument();
     expect(screen.getByText('Cocooners')).toBeInTheDocument();
     expect(screen.getByText('Booking start date')).toBeInTheDocument();
     expect(screen.getByText('Booking period')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Book Now' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'RESERVE ME' })).toBeInTheDocument();
   });
 
-  test('allows property selection', () => {
+  test('shows the first room selected by default', () => {
     renderWithProvider(<BookingForm />);
-    
-    const propertySelect = screen.getByDisplayValue(/Cocoon Place Coliving Warsaw/);
-    expect(propertySelect).toBeInTheDocument();
-    
-    fireEvent.change(propertySelect, { target: { value: 'city-warsaw' } });
-    // The change should be handled by Redux
+
+    expect(screen.getByDisplayValue(/Deluxe singles hideout/)).toBeInTheDocument();
   });
 
-  test('allows room selection', () => {
+  test('date input is read-only and shows the placeholder value', () => {
     renderWithProvider(<BookingForm />);
-    
-    const roomSelect = screen.getByDisplayValue(/Deluxe singles hideout/);
-    expect(roomSelect).toBeInTheDocument();
-    
-    fireEvent.change(roomSelect, { target: { value: 'premier-solo' } });
-    // The change should be handled by Redux
-  });
 
-  test('date input is read-only and clickable', () => {
-    renderWithProvider(<BookingForm />);
-    
-    const dateInput = screen.getByPlaceholderText('Click to select date');
+    const dateInput = screen.getByPlaceholderText('Select date');
     expect(dateInput).toBeInTheDocument();
     expect(dateInput).toHaveAttribute('readonly');
   });
 
-  test('book now button is clickable', () => {
-    renderWithProvider(<BookingForm />);
-    
-    const bookButton = screen.getByRole('button', { name: 'Book Now' });
-    fireEvent.click(bookButton);
-    // Should trigger date picker open action
+  test('reserve button opens the date picker', () => {
+    const { store } = renderWithProvider(<BookingForm />);
+
+    fireEvent.click(screen.getByRole('button', { name: 'RESERVE ME' }));
+
+    expect(store.getState().booking.isDatePickerOpen).toBe(true);
   });
 });

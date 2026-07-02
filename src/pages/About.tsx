@@ -1,14 +1,16 @@
 import React from 'react';
 import { Linkedin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div>
       {/* Main About Section */}
       <section className="about-section">
         <div className="container">
           <div className="about-content">
-            <h2>Cocoon Who we are</h2>
+            <h2>{t('pages.about')}</h2>
             <p>
               Cocoon redefines urban living with curated spaces that balance privacy, connection, 
               and chillaxing.
@@ -32,37 +34,38 @@ const About: React.FC = () => {
                 hospitality needs. As a Financier, Asset Manager, and Hotelier, her passion influences 
                 every design and decision.
               </p>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/paulina-shaw"
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
                   gap: '8px',
-                  color: '#FF6B47',
+                  color: 'var(--flamingo-pink)',
                   textDecoration: 'none',
                   fontWeight: 'bold'
                 }}
               >
                 <Linkedin size={20} />
-                LINKEDIN LINK
+                LinkedIn
               </a>
             </div>
             
-            <div style={{ 
+            <div style={{
               flex: 1,
-              height: '300px',
-              background: 'linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%)',
+              minHeight: '300px',
+              background: 'linear-gradient(135deg, #FC8EAC 0%, #F7B7A3 100%)',
               borderRadius: '12px',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               color: 'white',
-              fontSize: '16px',
-              fontWeight: 'bold'
+              gap: '8px'
             }}>
-              Founder Photo
+              <span style={{ fontSize: '64px', fontWeight: 800, letterSpacing: '2px' }}>PS</span>
+              <span style={{ fontSize: '14px', fontWeight: 600, opacity: 0.9 }}>Paulina Shaw · Founder</span>
             </div>
           </div>
 
@@ -81,7 +84,7 @@ const About: React.FC = () => {
             <p style={{ 
               fontSize: '18px', 
               fontWeight: 'bold', 
-              color: '#FF6B47',
+              color: '#FC8EAC',
               marginTop: '20px'
             }}>
               Destination – discovered.
@@ -100,14 +103,14 @@ const About: React.FC = () => {
             marginBottom: '40px'
           }}>
             <div style={{ textAlign: 'center', padding: '30px' }}>
-              <h3 style={{ color: '#FF6B47', fontSize: '24px', marginBottom: '15px' }}>Our Inspiration</h3>
+              <h3 style={{ color: '#FC8EAC', fontSize: '24px', marginBottom: '15px' }}>Our Inspiration</h3>
               <p style={{ fontSize: '16px', lineHeight: '1.8' }}>
                 Cocoon is born to sustainably house small communities.
               </p>
             </div>
             
             <div style={{ textAlign: 'center', padding: '30px' }}>
-              <h3 style={{ color: '#FF6B47', fontSize: '24px', marginBottom: '15px' }}>Our Name</h3>
+              <h3 style={{ color: '#FC8EAC', fontSize: '24px', marginBottom: '15px' }}>Our Name</h3>
               <p style={{ fontSize: '16px', lineHeight: '1.8' }}>
                 Cocoon represents transformation that inspires progress, slow living, and 
                 authenticity.
@@ -115,7 +118,7 @@ const About: React.FC = () => {
             </div>
             
             <div style={{ textAlign: 'center', padding: '30px' }}>
-              <h3 style={{ color: '#FF6B47', fontSize: '24px', marginBottom: '15px' }}>Our Identity</h3>
+              <h3 style={{ color: '#FC8EAC', fontSize: '24px', marginBottom: '15px' }}>Our Identity</h3>
               <p style={{ fontSize: '16px', lineHeight: '1.8' }}>
                 Our soft pink, inspired by flamingos, symbolizes life's fleeting beauty, 
                 harmony, and friends for life — reminding us to find grace in life's dance.

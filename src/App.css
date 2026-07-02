@@ -453,3 +453,28 @@ h1, h2, h3, h4, h5, h6, button {
     width: calc(100% - 40px);
   }
 }
+
+/* Language switcher */
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--deep-taupe);
+  user-select: none;
+}
+
+.language-switcher span {
+  transition: color 0.2s ease;
+}
+
+.language-switcher span:hover {
+  color: var(--flamingo-pink);
+}
+
+.language-switcher span.active {
+  color: var(--flamingo-pink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

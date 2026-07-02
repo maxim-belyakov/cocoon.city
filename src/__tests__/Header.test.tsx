@@ -38,44 +38,38 @@ const renderWithProviders = (component: React.ReactElement) => {
 };
 
 describe('Header', () => {
-  test('renders header with logo and navigation', () => {
+  test('renders logo and navigation', () => {
     renderWithProviders(<Header />);
-    
-    expect(screen.getByText('COCOON')).toBeInTheDocument();
+
+    expect(screen.getByAltText('COCOON Coliving')).toBeInTheDocument();
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Cocoons')).toBeInTheDocument();
     expect(screen.getByText('About us')).toBeInTheDocument();
     expect(screen.getByText('Invest with us')).toBeInTheDocument();
     expect(screen.getByText('Contact us')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Book now' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'RESERVE ME' })).toBeInTheDocument();
   });
 
   test('displays language switcher', () => {
     renderWithProviders(<Header />);
-    
+
     expect(screen.getByText('PL')).toBeInTheDocument();
     expect(screen.getByText('EN')).toBeInTheDocument();
   });
 
   test('contact us button triggers contact modal', () => {
     const { store } = renderWithProviders(<Header />);
-    
-    const contactButton = screen.getByText('Contact us');
-    fireEvent.click(contactButton);
-    
-    // Check if contact modal open action was dispatched
-    const state = store.getState();
-    expect(state.contact.isModalOpen).toBe(true);
+
+    fireEvent.click(screen.getByText('Contact us'));
+
+    expect(store.getState().contact.isModalOpen).toBe(true);
   });
 
-  test('book now button triggers date picker', () => {
+  test('reserve button triggers date picker', () => {
     const { store } = renderWithProviders(<Header />);
-    
-    const bookButton = screen.getByRole('button', { name: 'Book now' });
-    fireEvent.click(bookButton);
-    
-    // Check if date picker open action was dispatched
-    const state = store.getState();
-    expect(state.booking.isDatePickerOpen).toBe(true);
+
+    fireEvent.click(screen.getByRole('button', { name: 'RESERVE ME' }));
+
+    expect(store.getState().booking.isDatePickerOpen).toBe(true);
   });
 });

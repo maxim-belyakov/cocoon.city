@@ -19,6 +19,11 @@
 .DS_Store
 *.pem
 
+# secrets — never commit
+Cocoon Security codes for Namecheap.pdf
+*Security codes*
+.claude/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import BookingForm from '../components/BookingForm';
 import RoomShowcase from '../components/RoomShowcase';
 import ApplicationForm from '../components/ApplicationForm';
 import { useAppSelector } from '../utils/hooks';
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const { selectedRoom, startDate } = useAppSelector(state => state.booking);
   const [showApplicationForm, setShowApplicationForm] = useState(false);
 
@@ -27,12 +30,17 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <h1 style={{ fontSize: '42px', marginBottom: '10px' }}>COCOON: COLIVING HOMES<br />IN WARSAW</h1>
-          <h2 style={{ fontSize: '24px', fontWeight: '400', marginBottom: '30px' }}>
-            DISCOVER YOUR COLIVING PLACE<br />
-            WHERE CONNECTION, AND WORK-LIFE BALANCE COME NATURALLY
-          </h2>
-          <BookingForm />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <h1 style={{ fontSize: '42px', marginBottom: '10px' }}>{t('hero.title')}</h1>
+            <h2 style={{ fontSize: '24px', fontWeight: '400', marginBottom: '30px' }}>
+              {t('hero.subtitle')}
+            </h2>
+            <BookingForm />
+          </motion.div>
         </div>
       </section>
 
@@ -52,16 +60,11 @@ const Home: React.FC = () => {
       <section className="about-section">
         <div className="container">
           <div className="about-content">
-            <h2>DISCOVER YOUR COLIVING PLACE</h2>
+            <h2>{t('discover.title')}</h2>
             <h3 style={{ fontSize: '20px', marginBottom: '30px', color: '#666' }}>
-              WHERE CONNECTION, AND WORK-LIFE BALANCE COME NATURALLY
+              {t('discover.subtitle')}
             </h3>
-            <p>
-              Since 2003, we've been turning spaces into shared homes for remote workers, 
-              creatives, and young professionals on the move. Private rooms. Shared energy. Flexible 
-              leases. Ultra-fast Wi-Fi. Whether you're Zooming at 9 or brainstorming at midnight — 
-              Cocoon is your base, your vibe, your community.
-            </p>
+            <p>{t('discover.body')}</p>
 
             <div style={{
               display: 'grid',
@@ -71,7 +74,7 @@ const Home: React.FC = () => {
               textAlign: 'center',
             }}>
               <div>
-                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>ESSENTIALS</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>{t('discover.essentials')}</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Fully furnished houses</li>
                   <li>High-speed Wi-Fi</li>
@@ -79,9 +82,9 @@ const Home: React.FC = () => {
                   <li>Mid to long term rentals</li>
                 </ul>
               </div>
-              
+
               <div>
-                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>COMFORT</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>{t('discover.comfort')}</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Fully equipped kitchen</li>
                   <li>Web booking</li>
@@ -89,9 +92,9 @@ const Home: React.FC = () => {
                   <li>Swift assistance</li>
                 </ul>
               </div>
-              
+
               <div>
-                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>PAMPER ME</h3>
+                <h3 style={{ color: 'var(--flamingo-pink)', marginBottom: '20px' }}>{t('discover.pamper')}</h3>
                 <ul style={{ listStyle: 'none', lineHeight: '2' }}>
                   <li>Airport transportation</li>
                   <li>Chauffeur</li>

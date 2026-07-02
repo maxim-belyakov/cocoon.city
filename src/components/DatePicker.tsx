@@ -90,7 +90,7 @@ const DatePicker: React.FC = () => {
         style.color = '#ccc';
       } else if (isBooked) {
         className += ' booked';
-        style.backgroundColor = '#FF8A47';
+        style.backgroundColor = '#F7B7A3';
         style.color = 'white';
       } else if (isSelected) {
         className += ' selected';
@@ -264,7 +264,7 @@ const DatePicker: React.FC = () => {
                     style.backgroundColor = '#f5f5f5';
                     style.color = '#ccc';
                   } else if (isBooked) {
-                    style.backgroundColor = '#FF8A47';
+                    style.backgroundColor = '#F7B7A3';
                     style.color = 'white';
                   } else if (isSelected) {
                     style.backgroundColor = 'var(--sage-green)';
@@ -317,7 +317,7 @@ const DatePicker: React.FC = () => {
             Past dates
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <div style={{ width: '12px', height: '12px', backgroundColor: '#FF8A47' }}></div>
+            <div style={{ width: '12px', height: '12px', backgroundColor: '#F7B7A3' }}></div>
             Booked
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>

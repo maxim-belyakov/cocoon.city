@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../utils/hooks';
 import { 
   setSelectedProperty, 
@@ -12,7 +13,8 @@ import {
 
 const BookingForm: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { 
+  const { t } = useTranslation();
+  const {
     selectedProperty, 
     selectedRoom, 
     adults, 
@@ -48,12 +50,12 @@ const BookingForm: React.FC = () => {
     <div className="booking-form">
       <div className="form-row">
         <div className="form-group">
-          <label>Room</label>
-          <select 
-            value={selectedRoom?.id || ''} 
+          <label>{t('booking.room')}</label>
+          <select
+            value={selectedRoom?.id || ''}
             onChange={handleRoomChange}
           >
-            <option value="">Select a Room</option>
+            <option value="">{t('booking.selectRoom')}</option>
             {rooms.map(room => (
               <option key={room.id} value={room.id}>
                 {room.name}
@@ -63,52 +65,52 @@ const BookingForm: React.FC = () => {
         </div>
 
         <div className="form-group">
-          <label>Cocooners</label>
-          <select 
-            value={adults} 
+          <label>{t('booking.cocooners')}</label>
+          <select
+            value={adults}
             onChange={handleAdultsChange}
             disabled={!selectedRoom}
           >
             {Array.from({ length: selectedRoom?.maxOccupancy || 1 }, (_, i) => (
               <option key={i + 1} value={i + 1}>
-                {i + 1} Adult{i > 0 ? 's' : ''}
+                {i + 1} {i > 0 ? t('booking.adults') : t('booking.adult')}
               </option>
             ))}
           </select>
         </div>
 
         <div className="form-group">
-          <label>Booking start date</label>
-          <input 
-            type="text" 
-            value={startDate ? startDate.toLocaleDateString() : 'Select date'}
+          <label>{t('booking.startDate')}</label>
+          <input
+            type="text"
+            value={startDate ? startDate.toLocaleDateString() : t('booking.selectDate')}
             onClick={handleDateClick}
             readOnly
             style={{ cursor: 'pointer' }}
-            placeholder="Click to select date"
+            placeholder={t('booking.selectDate')}
           />
         </div>
 
         <div className="form-group">
-          <label>Booking period</label>
-          <select 
-            value={bookingPeriod} 
+          <label>{t('booking.period')}</label>
+          <select
+            value={bookingPeriod}
             onChange={handleBookingPeriodChange}
           >
-            <option value={1}>1 month</option>
-            <option value={6}>6 months</option>
-            <option value={12}>12 months</option>
+            <option value={1}>{t('booking.month', { count: 1 })}</option>
+            <option value={6}>{t('booking.month', { count: 6 })}</option>
+            <option value={12}>{t('booking.month', { count: 12 })}</option>
           </select>
         </div>
 
         <div className="form-group">
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="btn-primary"
             onClick={handleBookNow}
             style={{ marginTop: '25px' }}
           >
-            RESERVE ME
+            {t('nav.reserve')}
           </button>
         </div>
       </div>

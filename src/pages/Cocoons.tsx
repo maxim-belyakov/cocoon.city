@@ -27,7 +27,7 @@ const Cocoons: React.FC = () => {
           }}>
             <h3 style={{ 
               fontSize: '28px', 
-              color: '#FF6B47', 
+              color: '#FC8EAC', 
               textAlign: 'center',
               marginBottom: '30px' 
             }}>
@@ -54,7 +54,7 @@ const Cocoons: React.FC = () => {
               backgroundColor: 'white',
               borderRadius: '8px',
               fontWeight: 'bold',
-              color: '#FF6B47'
+              color: '#FC8EAC'
             }}>
               📍 Poland – Pruszkow
             </div>
@@ -70,7 +70,7 @@ const Cocoons: React.FC = () => {
           }}>
             <h3 style={{ 
               fontSize: '28px', 
-              color: '#FF6B47', 
+              color: '#FC8EAC', 
               textAlign: 'center',
               marginBottom: '30px' 
             }}>
@@ -103,7 +103,7 @@ const Cocoons: React.FC = () => {
                 backgroundColor: '#f8f9fa',
                 borderRadius: '8px',
                 fontWeight: 'bold',
-                color: '#FF6B47'
+                color: '#FC8EAC'
               }}>
                 📍 Poland – Warsaw
               </div>
@@ -114,7 +114,7 @@ const Cocoons: React.FC = () => {
                 backgroundColor: '#f8f9fa',
                 borderRadius: '8px',
                 fontWeight: 'bold',
-                color: '#FF6B47'
+                color: '#FC8EAC'
               }}>
                 📍 Portugal – Porto
               </div>
@@ -125,7 +125,7 @@ const Cocoons: React.FC = () => {
                 backgroundColor: '#f8f9fa',
                 borderRadius: '8px',
                 fontWeight: 'bold',
-                color: '#FF6B47'
+                color: '#FC8EAC'
               }}>
                 📍 United Kingdom – Scotland – Edinburgh
               </div>
@@ -136,7 +136,7 @@ const Cocoons: React.FC = () => {
                 backgroundColor: '#f8f9fa',
                 borderRadius: '8px',
                 fontWeight: 'bold',
-                color: '#FF6B47'
+                color: '#FC8EAC'
               }}>
                 📍 United Arab Emirates – Dubai
               </div>
@@ -161,7 +161,7 @@ const Cocoons: React.FC = () => {
                 key={index}
                 style={{
                   height: '200px',
-                  background: `linear-gradient(135deg, #FF6B47 0%, #FF8A47 100%)`,
+                  background: `linear-gradient(135deg, #FC8EAC 0%, #F7B7A3 100%)`,
                   borderRadius: '12px',
                   display: 'flex',
                   flexDirection: 'column',
